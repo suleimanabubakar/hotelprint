@@ -31,6 +31,11 @@ def mainprint(request,order):
     makepdf(order,"main")
     return JsonResponse({'state':'200'})
 
+def orderprint(request,order):
+    makepdf(order,"waiter")
+    return JsonResponse({'state':'200'})
+
+
 def makepdf(order,type):
 
     options = {

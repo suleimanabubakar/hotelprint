@@ -45,5 +45,5 @@ def makepdf(order,type):
     orderUrl = config.url+getLinkType(type)+'/'+str(order)
     file = config.loc+'/'+ getPdfName(type,order)
     pdfkit.from_url(orderUrl,file , options=options)
-    printPdf(file)
+    printPdf(file,type)
     return "made"

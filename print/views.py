@@ -20,7 +20,7 @@ def getLinkType(type):
     if type == 'main':
         urlL = 'mainorderprintauto'
     else:
-
+        urlL = 'orderprintauto'
     return urlL
 
 def getPdfName(type,order):

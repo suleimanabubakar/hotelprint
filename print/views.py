@@ -41,9 +41,11 @@ def makepdf(order,type):
     options = {
     'margin-top': '0',
     'margin-left': '0',
-        }
-    orderUrl = config.url+getLinkType(type)+'/'+str(order)
-    file = config.loc+'/'+ getPdfName(type,order)
-    pdfkit.from_url(orderUrl,file , options=options)
-    printPdf(file,type)
-    return "made"
+        }    
+    try:
+        orderUrl = config.url+getLinkType(type)+'/'+str(order)
+        file = config.loc+'/'+ getPdfName(type,order)
+        pdfkit.from_url(orderUrl,file , options=options)
+        printPdf(file,type)
+    except:
+        return "made"

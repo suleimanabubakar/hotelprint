@@ -1,4 +1,5 @@
-from print.print import printPdf
+# from print.print import printPdf
+from .print_v2 import printPdf
 from django.shortcuts import render
 import pdfkit
 from django.http import JsonResponse
@@ -47,5 +48,5 @@ def makepdf(order,type):
         file = config.loc+'/'+ getPdfName(type,order)
         pdfkit.from_url(orderUrl,file , options=options)
         printPdf(file,type)
-    except:
+    except Exception as e:
         return "made"
